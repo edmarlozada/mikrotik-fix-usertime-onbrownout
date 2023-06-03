@@ -62,8 +62,8 @@
       :local eUsrName [/ip hotspot active get \$i user];
       :local uTimeLimit [/ip hotspot user get [find name=\$eUsrName] limit-uptime];
       :if (\$uTimeLimit>0) do={
-        :local aTimeUseBak [/ip hotspot active get \$i uptime];
         :local uTimeUseBak [/ip hotspot user get [find name=\$eUsrName] uptime];
+        :local aTimeUseBak [/ip hotspot active get \$i uptime];
         :put \"( UpTimeBackup ) user => UsrName:[\$eUsrName] uTimeLimit:[\$uTimeLimit] \
                                        uTimeUseBak:[\$uTimeUseBak] aTimeUseBak:[\$aTimeUseBak]\";
         :set iData \"\$iData :set (\\\$tData->[:len \\\$tData]) { \\\"\$eUsrName\\\"; \$uTimeUseBak; \$aTimeUseBak; \$uTimeLimit }\\r\\n\";
