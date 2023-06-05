@@ -1,7 +1,8 @@
 # mikrotik-fix-usertime-onbrownout
-Handle Active Users Limit-Uptime on Power Interruption
+Mikrotik Script to Fix Users-Limit-Uptime on Brownout v10.0
+Handle Active Users Limit-Uptime on Power Interruption.
 
-Saved Data: (interval):
+eUpTimeBackup: (interval)
 - ip hotspot active user
 - ip hotspot user uptime
 - ip hotspot active uptime
@@ -10,7 +11,7 @@ Saved Data: (interval):
 Saved Data Location:
 - system script name="hs-SavedUptime" source
 
-Power Interruption Update:
+eUpTimeUpdate:
 - NewLimitUptime = (User-Limit-Uptime) - (Save-Active-Uptime)
 - ip hotspot user limit-uptime=$NewLimitUptime
 
