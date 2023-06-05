@@ -1,0 +1,3 @@
+Mikrotik Script to Fix Users-Limit-Uptime on Brownout. Handle Active Users Limit-Uptime on Power Interruption.
+
+mikrotik, mikrotik-router, mikrotik-hotspot, mikrotik-script, mikrotik-routeros-script

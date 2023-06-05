@@ -1,14 +1,14 @@
 # ==============================
 # Mikrotik Script to Fix Users-Limit-Uptime on Brownout v10.0
-# Handle Active Users Limit-Uptime on Power Interruption
-# Saved Data: (interval)
+# Handle Active Users Limit-Uptime on Power Interruption.
+# eUpTimeBackup: (interval)
 # - ip hotspot active user
 # - ip hotspot user uptime
 # - ip hotspot active uptime
 # - ip hotspot user limit-uptime
 # Saved Data Location:
 # - system script name="hs-SavedUptime" source
-# Power Interruption Update:
+# eUpTimeUpdate:
 # - NewLimitUptime = (User-Limit-Uptime) - (Save-Active-Uptime)
 # - ip hotspot user limit-uptime=$NewLimitUptime
 # Howto Install:
@@ -21,25 +21,25 @@
 # ------------------------------
 /{:put "Installing Fix Users-Limit-Uptime...";
 
-:local BackupInterval 5m
+:local BackupInterval 5m;
 
 # === remove old === #
-/system scheduler remove [find name="uptime backup"]
-/system scheduler remove [find name="uptime restore"]
-/system scheduler remove [find name="uptime_backup"]
-/system scheduler remove [find name="uptime_restore"]
-/system scheduler remove [find name="ss_UpTime_Backup"]
-/system scheduler remove [find name="ss_UpTime_Update"]
-/system scheduler remove [find name="ss_UpTime_Restore"]
-/system scheduler remove [find name="eUpTimeBackup"]
-/system scheduler remove [find name="eUpTimeRestore"]
-/system script remove [find name="sd-hsTimeLeft"]
-/system script remove [find name="sd-hsSaveUptime"]
-/system script remove [find name="hs-SaveUptime"]
-/system script remove [find name="hs-SavedUptime"]
+/system scheduler remove [find name="uptime backup"];
+/system scheduler remove [find name="uptime restore"];
+/system scheduler remove [find name="uptime_backup"];
+/system scheduler remove [find name="uptime_restore"];
+/system scheduler remove [find name="ss_UpTime_Backup"];
+/system scheduler remove [find name="ss_UpTime_Update"];
+/system scheduler remove [find name="ss_UpTime_Restore"];
+/system scheduler remove [find name="eUpTimeBackup"];
+/system scheduler remove [find name="eUpTimeRestore"];
+/system script remove [find name="sd-hsTimeLeft"];
+/system script remove [find name="sd-hsSaveUptime"];
+/system script remove [find name="hs-SaveUptime"];
+/system script remove [find name="hs-SavedUptime"];
 
 # === eUpTimeBackup === #
-{ :local eName "eUpTimeBackup"
+{ :local eName "eUpTimeBackup";
   :local eEvent "# $eName #\r
 # ==============================\r
 # Backup User Active Limit-Uptime\r
@@ -53,7 +53,7 @@
 /system logging set [find topics=\"critical\"] disabled=no;
 :if ([/system script find name=\$iName]=\"\") do={
   /system script add name=\$iName comment=\"( hotspot_saved_uptime )\";
-  :while ((\$i>0) and ([/system script find name=\$iName]=\"\")) do={:set i (\$i-1); :delay 1s}
+  :while ((\$i>0) and ([/system script find name=\$iName]=\"\")) do={:set i (\$i-1);:delay 1s};
 };
 :if (\$i>0) do={
   :local iData \" :local tData [:toarray \\\"\\\"];\\r\\n\";
@@ -81,7 +81,7 @@
 
 
 # === eUpTimeUpdate === #
-{ :local eName "eUpTimeUpdate"
+{ :local eName "eUpTimeUpdate";
   :local eEvent "# $eName #\r
 # ==============================\r
 # Adjust User Limit-Uptime\r
@@ -118,5 +118,6 @@
 
 # ------------------------------\r
 }
-execute script=[/system scheduler get [find name="eUpTimeBackup"] on-event]
+:local i 10;:while (($i>0) and ([/system scheduler find name="eUpTimeBackup"]="")) do={:set i ($i-1);:delay 1s};
+execute script=[/system scheduler get [find name="eUpTimeBackup"] on-event];
 
