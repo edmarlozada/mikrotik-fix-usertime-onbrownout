@@ -1,5 +1,5 @@
-# mikrotik-fix-usertime-onbrownout
-Mikrotik Script to Fix Users-Limit-Uptime on Brownout v10.0
+# mikrotik-fix-usertime-onbrownout v10.0
+Mikrotik Script to Fix Users-Limit-Uptime on Brownout.
 Handle Active Users Limit-Uptime on Power Interruption.
 
 eUpTimeBackup: (interval)
