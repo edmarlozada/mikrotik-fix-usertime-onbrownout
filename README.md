@@ -24,3 +24,6 @@ Author:
 
 Facebook Contact:
 - https://www.facebook.com/chloe.renae.9
+
+Facebook JuanFi Group:
+- https://www.facebook.com/groups/1172413279934139
