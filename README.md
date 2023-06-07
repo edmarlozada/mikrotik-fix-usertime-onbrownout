@@ -15,7 +15,8 @@ eUpTimeUpdate:
 - NewLimitUptime = (User-Limit-Uptime) - (Save-Active-Uptime)
 - ip hotspot user limit-uptime=$NewLimitUptime
 
-Howto Install:
+How to install:
+- Open file "mts-fix-usertime-onbrownout_v10.rsc".
 - select all, copy, & paste to winbox terminal
 
 Author:

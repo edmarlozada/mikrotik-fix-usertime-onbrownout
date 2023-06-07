@@ -1,0 +1,20 @@
+mikrotik-fix-usertime-onbrownout v10.0 (stable)
+Mikrotik Script to Fix Users-Limit-Uptime on Brownout.
+Handle Active Users Limit-Uptime on Power Interruption.
+
+dawlim here:
+https://github.com/edmarlozada/mikrotik-fix-usertime-onbrownout
+
+youtube video here v9.0:
+https://www.youtube.com/watch?v=smxCxMflO2E
+
+Write us comment if error occurs,
+or if script is working well!
+
+NOTE:
+If you already have another script like this. You have 3 options:
+1. Do not install this script.
+2. Remove the other and install this.
+3. If it has no problem. wag na this 😅
+
+mikrotik, mikrotik-router, mikrotik-hotspot, mikrotik-script, mikrotik-routeros-script
