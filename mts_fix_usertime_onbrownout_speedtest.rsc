@@ -1,14 +1,5 @@
-# eUpTimeBackup #
-# ==============================
-# Backup Users Active Uptime v13.0
-# Saves   : /ip hotspot active user
-#           /ip hotspot user uptime
-#           /ip hotspot active uptime
-#           /ip hotspot active session-time-left
-#           /ip hotspot user limit-uptime
-# Location: /system script "hs-UpTimeSaved" source
-# Interval: 00:05:00
-# by: Chloe Renae & Edmar Lozada
+{
+:put ("begin=>$[/system clock get time]")
 # ------------------------------
 local iName "hs-UpTimeSaved"; local x 5;
 if ([/system script find name=$iName]="") do={
@@ -17,8 +8,7 @@ if ([/system script find name=$iName]="") do={
 }
 if ($x>0) do={
   local iData ":local tData [:toarray \"\"];\r\n"
-  if ([len [/ip hotspot active print as-value]]>0) do={ set x 0
-    log info ("eUpTimeBackup Begin => $[/system clock get time]")
+  if ([len [/ip hotspot active print as-value]]>0) do={ set x 1
     /system scheduler set [find name=eUpTimeBackup] interval=0 disabled=yes
     /system logging set [find topics=critical] disabled=no
     foreach au in=[/ip hotspot active find] do={ set x ($x+1)
@@ -33,9 +23,11 @@ if ($x>0) do={
       }
     }
     /system scheduler set [find name=eUpTimeBackup] disabled=no
-    log info ("eUpTimeBackup End ($x) => $[/system clock get time]")
   }
   set iData ("$iData".":return \$tData\r\n")
   /system script set [find name=$iName] source=$iData
 }
 # ------------------------------
+:put ("end=>$[/system clock get time]")
+/system script remove $iName
+}
