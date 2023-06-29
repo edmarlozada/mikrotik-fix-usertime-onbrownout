@@ -15,14 +15,14 @@ eUpTimeBackup: (interval)
 - ip hotspot user limit-uptime
 
 Saved Data Location:
-- system script name="hs-SavedUptime" source
+- system script name="hs-UpTimeSaved" source
 
 eUpTimeUpdate:
 - NewLimitUptime = (User-Limit-Uptime) - (Save-Active-Uptime)
 - ip hotspot user limit-uptime=$NewLimitUptime
 
 How to install:
-- Open file "mts-fix-usertime-onbrownout_v10.rsc".
+- Open file "mts-fix-usertime-onbrownout.rsc".
 - select all, copy, & paste to winbox terminal
 
 Author:
