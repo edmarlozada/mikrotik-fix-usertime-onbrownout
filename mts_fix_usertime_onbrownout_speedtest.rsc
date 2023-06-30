@@ -8,8 +8,10 @@ if ([/system script find name=$iName]="") do={
 }
 if ($x>0) do={
   local iData ":local tData [:toarray \"\"];\r\n"
-  if ([len [/ip hotspot active print as-value]]>0) do={ set x 1
-    /system scheduler set [find name=eUpTimeBackup] interval=0 disabled=yes
+  if ([len [/ip hotspot active print as-value]]>0) do={ set x 0
+    log info ("eUpTimeBackup Begin => $[/system clock get time]")
+    /system scheduler set [find name=eUpTimeBackup] disabled=yes
+    /system scheduler set [find name=eUpTimeUpdate] interval=0
     /system logging set [find topics=critical] disabled=no
     foreach au in=[/ip hotspot active find] do={ set x ($x+1)
       local eUsrName [/ip hotspot active get $au user]
@@ -23,6 +25,7 @@ if ($x>0) do={
       }
     }
     /system scheduler set [find name=eUpTimeBackup] disabled=no
+    log info ("eUpTimeBackup End ($x) => $[/system clock get time]")
   }
   set iData ("$iData".":return \$tData\r\n")
   /system script set [find name=$iName] source=$iData

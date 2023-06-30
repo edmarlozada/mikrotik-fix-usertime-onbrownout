@@ -1,4 +1,4 @@
-# mikrotik-fix-usertime-onbrownout v13.1
+# mikrotik-fix-usertime-onbrownout v13.2
 Mikrotik script to fix users time on brownout.
 Handle active users limit-uptime on power interruption.
 I strongly suggest to use UPS than this script! 😅
