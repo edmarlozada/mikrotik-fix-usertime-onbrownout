@@ -1,14 +1,6 @@
-# eUpTimeBackup #
-# ==============================
-# Backup Users Active Uptime v13.0
-# Saves   : /ip hotspot active user
-#           /ip hotspot user uptime
-#           /ip hotspot active uptime
-#           /ip hotspot active session-time-left
-#           /ip hotspot user limit-uptime
-# Location: /system script "hs-UpTimeSaved" source
-# Interval: 00:05:00
-# by: Chloe Renae & Edmar Lozada
+{
+put ("eUpTimeBackup Begin => $[/system clock get time]")
+log info ("eUpTimeBackup Begin => $[/system clock get time]")
 # ------------------------------
 local iName "hs-UpTimeSaved"; local x 5;
 if ([/system script find name=$iName]="") do={
@@ -38,3 +30,7 @@ if ($x>0) do={
   /system script set [find name=$iName] source=$iData
 }
 # ------------------------------
+log info ("eUpTimeBackup End ($x) => $[/system clock get time]")
+put ("eUpTimeBackup End ($x) => $[/system clock get time]")
+/system script remove $iName
+}

@@ -3,10 +3,6 @@ Mikrotik script to fix users time on brownout.
 Handle active users limit-uptime on power interruption.
 I strongly suggest to use UPS than this script! 😅
 
-what's new:
-- minor bug fix
-- backup start & end on log
-
 eUpTimeBackup: (interval)
 - ip hotspot active user
 - ip hotspot user uptime
@@ -22,7 +18,7 @@ eUpTimeUpdate:
 - ip hotspot user limit-uptime=$NewLimitUptime
 
 How to install:
-- Open file "mts-fix-usertime-onbrownout.rsc".
+- Open file "fixusertime-onbrownout.rsc".
 - select all, copy, & paste to winbox terminal
 
 Author:
