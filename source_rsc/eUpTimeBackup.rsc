@@ -12,7 +12,7 @@
 # ------------------------------
 local iName "hs-UpTimeSaved"; local x 5;
 if ([/system script find name=$iName]="") do={
-  /system script add name=$iName comment="( hotspot ) Saved Uptime )"
+  /system script add name=$iName comment="( hotspot: Saved Uptime )"
   while (($x>0) and ([/system script find name=$iName]="")) do={set x ($x-1);delay 1s}
 }
 if ($x>0) do={
