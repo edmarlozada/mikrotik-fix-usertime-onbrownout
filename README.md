@@ -23,13 +23,9 @@ How to install:
 
 Author:
 - Chloe Renae & Edmar Lozada
-- Gcash (0909-3887889)
 
 Facebook Contact:
 - https://www.facebook.com/chloe.renae.9
 
 Youtube Video:
 - https://www.youtube.com/watch?v=smxCxMflO2E
-
-Facebook JuanFi Group:
-- https://www.facebook.com/groups/1172413279934139
