@@ -27,7 +27,7 @@ eUpTimeUpdate:
 - ip hotspot user limit-uptime=$NewLimitUptime
 
 How to install:
-- Open file "fixusertime-onbrownout_v13.3"
+- Open file "fixusertime-onbrownout_v13.0"
 - select all, copy, & paste to winbox terminal
 
 Author:
