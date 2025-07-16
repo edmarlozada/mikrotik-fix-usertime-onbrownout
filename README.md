@@ -3,16 +3,16 @@ Mikrotik script to fix users time on brownout.
 Handle active users limit-uptime on power interruption.
 I strongly suggest to use UPS than this script! 😅
 
-# Author:
+### Author:
 - Chloe Renae & Edmar Lozada
 # Facebook Contact:
 - https://www.facebook.com/chloe.renae.9
 
-## How to install:
+### How to install:
 - Open file "fixusertime-onbrownout_v16a.rsc"
 - select all, copy, & paste to winbox terminal
 
-# WARNING!!!
+### WARNING!!!
 - Do Not Mix with other similar brownout script
 - Only use one brownout script for your system
 - Remove our old version of brownout as well
