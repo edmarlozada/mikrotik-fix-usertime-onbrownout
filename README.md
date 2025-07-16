@@ -5,7 +5,7 @@ I strongly suggest to use UPS than this script! 😅
 
 ### Author:
 - Chloe Renae & Edmar Lozada
-# Facebook Contact:
+### Facebook Contact:
 - https://www.facebook.com/chloe.renae.9
 
 ### How to install:
