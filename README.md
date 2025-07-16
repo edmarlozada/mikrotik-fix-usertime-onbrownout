@@ -8,7 +8,7 @@ I strongly suggest to use UPS than this script! 😅
 # Facebook Contact:
 - https://www.facebook.com/chloe.renae.9
 
-How to install:
+## How to install:
 - Open file "fixusertime-onbrownout_v16a.rsc"
 - select all, copy, & paste to winbox terminal
 
